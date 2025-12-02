@@ -12,17 +12,17 @@ defmodule AdventOfCode.Day1Test do
     {:ok, input_data: input_data}
   end
 
-  describe "part_one/1" do
+  describe "puzzle_one/1" do
     test "Given test input, returns expected answer", %{input_data: data} do
       expected = 3
-      assert Day1.part_one(data) == expected
+      assert Day1.puzzle_one(data) == expected
     end
   end
 
-  describe "part_two/1" do
+  describe "puzzle_two/1" do
     test "Given test input, returns expected answer", %{input_data: data} do
       expected = 6
-      assert Day1.part_two(data) == expected
+      assert Day1.puzzle_two(data) == expected
     end
   end
 end

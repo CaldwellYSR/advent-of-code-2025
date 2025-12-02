@@ -1,8 +1,8 @@
 defmodule AdventOfCode.Day1 do
   @start 50
 
-  @spec part_one(String.t()) :: integer()
-  def part_one(data) when is_binary(data) do
+  @spec puzzle_one(String.t()) :: integer()
+  def puzzle_one(data) when is_binary(data) do
     {sum, _final_position} =
       data
       |> String.trim()
@@ -18,7 +18,8 @@ defmodule AdventOfCode.Day1 do
     sum
   end
 
-  def part_two(data) do
+  @spec puzzle_two(String.t()) :: integer()
+  def puzzle_two(data) do
     {sum, _final_position} =
       data
       |> String.trim()
