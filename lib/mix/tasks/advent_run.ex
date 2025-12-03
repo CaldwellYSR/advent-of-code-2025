@@ -17,7 +17,8 @@ defmodule Mix.Tasks.AdventRun do
   use Mix.Task
 
   @days %{
-    1 => AdventOfCode.Day1
+    1 => AdventOfCode.Day1,
+    2 => AdventOfCode.Day2
   }
 
   @impl Mix.Task
