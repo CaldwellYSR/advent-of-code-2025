@@ -18,7 +18,17 @@ defmodule Mix.Tasks.AdventRun do
 
   @days %{
     1 => AdventOfCode.Day1,
-    2 => AdventOfCode.Day2
+    2 => AdventOfCode.Day2,
+    3 => AdventOfCode.Day3,
+    4 => AdventOfCode.Day4,
+    5 => AdventOfCode.Day5,
+    6 => AdventOfCode.Day6,
+    7 => AdventOfCode.Day7,
+    8 => AdventOfCode.Day8,
+    9 => AdventOfCode.Day9,
+    10 => AdventOfCode.Day10,
+    11 => AdventOfCode.Day11,
+    12 => AdventOfCode.Day12
   }
 
   @impl Mix.Task
