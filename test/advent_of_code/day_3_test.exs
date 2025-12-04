@@ -21,8 +21,22 @@ defmodule AdventOfCode.Day3Test do
 
   describe "puzzle_two/1" do
     test "Given test input, returns expected answer", %{input_data: data} do
-      expected = -1
+      expected = 3_121_910_778_619
       assert puzzle_two(data) == expected
+    end
+
+    test "Given 234234234234278 returns 434234234278", %{input_data: data} do
+      input = "234234234234278\n"
+      expected = 434_234_234_278
+      assert puzzle_two(input) == expected
+    end
+
+    test "Given first bank of test data, returns something" do
+      input =
+        "2323233732423333335633333322134234324554233323746324333322454233432477323332532436412434167322334333\n"
+
+      expected = -1
+      assert puzzle_two(input) == expected
     end
   end
 end
