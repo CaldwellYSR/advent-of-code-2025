@@ -21,7 +21,7 @@ defmodule AdventOfCode.Day4Test do
 
   describe "puzzle_two/1" do
     test "Given test input, returns expected answer", %{input_data: data} do
-      expected = 3_121_910_778_619
+      expected = 43
       assert puzzle_two(data) == expected
     end
   end
