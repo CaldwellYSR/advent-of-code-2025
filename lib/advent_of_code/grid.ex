@@ -40,7 +40,17 @@ defmodule AdventOfCode.Grid do
     neighbors
   end
 
-  def to_grid!(file) do
+  def to_grid!(file, splitter \\ :char)
+
+  def to_grid!(file, :whitespace) do
+    for {row, y} <- file |> String.split("\n", trim: true) |> Enum.with_index(),
+        {char, x} <- row |> String.split(" ", trim: true) |> Enum.with_index(),
+        into: %{} do
+      {{x, y}, char}
+    end
+  end
+
+  def to_grid!(file, :char) do
     for {row, y} <- file |> String.split() |> Enum.with_index(),
         {char, x} <- row |> String.graphemes() |> Enum.with_index(),
         into: %{} do
@@ -48,7 +58,17 @@ defmodule AdventOfCode.Grid do
     end
   end
 
-  def to_integer_grid!(file) do
+  def to_integer_grid!(file, digit \\ :char)
+
+  def to_integer_grid!(file, :whitespace) do
+    for {row, y} <- file |> String.split("\n", trim: true) |> Enum.with_index(),
+        {char, x} <- row |> String.split(" ", trim: true) |> Enum.with_index(),
+        into: %{} do
+      {{x, y}, String.to_integer(char)}
+    end
+  end
+
+  def to_integer_grid!(file, :char) do
     for {row, y} <- file |> String.split() |> Enum.with_index(),
         {char, x} <- row |> String.graphemes() |> Enum.with_index(),
         into: %{} do
