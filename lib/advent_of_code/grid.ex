@@ -44,7 +44,7 @@ defmodule AdventOfCode.Grid do
 
   def to_grid!(file, :whitespace) do
     for {row, y} <- file |> String.split("\n", trim: true) |> Enum.with_index(),
-        {char, x} <- row |> String.split(" ", trim: true) |> Enum.with_index(),
+        {char, x} <- row |> String.split("", trim: true) |> Enum.with_index(),
         into: %{} do
       {{x, y}, char}
     end
