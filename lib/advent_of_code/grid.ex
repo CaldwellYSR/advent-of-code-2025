@@ -6,9 +6,9 @@ defmodule AdventOfCode.Grid do
     {x_length, y_length}
   end
 
-  def fetch(grid, coord) do
-    Map.fetch(grid, coord)
-  end
+  def fetch(grid, coord), do: Map.fetch(grid, coord)
+
+  def fetch!(grid, coord), do: Map.fetch!(grid, coord)
 
   def get_slope({from_x, from_y}, {to_x, to_y}),
     do: {to_x - from_x, to_y - from_y}
@@ -84,6 +84,11 @@ defmodule AdventOfCode.Grid do
     end
   end
 
+  def update_cell(grid, coord, new_char) do
+    {_, grid} = Map.get_and_update(grid, coord, fn c -> {c, new_char} end)
+    grid
+  end
+
   def cardinal_directions() do
     [
       {1, 0},
@@ -98,8 +103,8 @@ defmodule AdventOfCode.Grid do
 
     IO.puts("\n")
 
-    Enum.each(0..width, fn y ->
-      Enum.reduce(0..height, "", fn x, acc ->
+    Enum.each(0..height, fn y ->
+      Enum.reduce(0..width, "", fn x, acc ->
         acc <> "#{Map.fetch!(grid, {x, y})}"
       end)
       |> IO.inspect()
